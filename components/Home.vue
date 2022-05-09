@@ -133,28 +133,28 @@ export default {
             await this.$axios.get(`https://blob-prod-president.abs-cbn.com/feed-${this.presidents_feed.feedNo}/president-00199000-nation-location-1.json`)
                     .then(res => {
                         const { data } = res;
-                        this.presidents.push(...data.result);
+                        this.presidents = data.result;
                     })
         },
        async loadVPresidents() {
             await this.$axios.get(`https://blob-prod-vice-president.abs-cbn.com/feed-${this.vice_presidents_feed.feedNo}/vice-president-00299000-nation-location-1.json`)
                     .then(res => {
                         const { data } = res;
-                        this.vice_presidents.push(...data.result);
+                        this.vice_presidents = data.result;
                     })
         },
         async loadSenators() {
             await this.$axios.get(`https://blob-prod-senator.abs-cbn.com/feed-${this.senators_feed.feedNo}/senator-00399000-nation-location-1.json`)
                     .then(res => {
                         const { data } = res;
-                        this.senators.push(...data.result);
+                        this.senators = data.result;
                     })
         },
         async loadPartylist() {
             await this.$axios.get(`https://blob-prod-party-list.abs-cbn.com/feed-${this.partylist_feed.feedNo}/party-list-01199000-nation-location-1.json`)
                     .then(res => {
                         const { data } = res;
-                        this.partylist.push(...data.result);
+                        this.partylist = data.result;
                     })
         },
         async refresh() {
