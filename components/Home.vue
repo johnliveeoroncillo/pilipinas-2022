@@ -1,11 +1,11 @@
 <template>
-    <main class="w-screen h-screen overflow-hidden p-5 bg-gray-100 flex flex-col">
+    <main class="w-screen h-screen lg:overflow-hidden p-5 bg-gray-100 flex flex-col">
         <div class="pb-5">
             <img src="@/assets/logo.png" class="w-[200px] mx-auto" />
         </div>
 
-        <div class="relative grid grid-cols-4 gap-5 w-full flex-1">
-            <div class="flex-1 flex flex-col">
+        <div class="relative lg:grid lg:grid-cols-4 gap-5 w-full flex-1 ">
+            <div class="h-full lg:flex-1 flex flex-col">
                 <div class="bg-blue-700 text-white font-bold py-4 pl-4 pr-16 text-xl title tracking-wide rounded">President</div>
                 
                 <div class="relative flex-1 w-full">
@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="flex-1 flex flex-col">
+            <div class="h-full lg:flex-1 flex flex-col">
                 <div class="bg-blue-700 text-white font-bold py-4 pl-4 pr-16 text-xl title tracking-wide rounded">Vice President</div>
                 
                 <div class="relative flex-1 w-full">
@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            <div class="flex-1 flex flex-col">
+            <div class="h-full lg:flex-1 flex flex-col">
                 <div class="bg-blue-700 text-white font-bold py-4 pl-4 pr-16 text-xl title tracking-wide rounded">Senator</div>
                 
                 <div class="relative flex-1 w-full">
@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="flex-1 flex flex-col">
+            <div class="h-full lg:flex-1 flex flex-col">
                 <div class="bg-blue-700 text-white font-bold py-4 pl-4 pr-16 text-xl title tracking-wide rounded">Partylist</div>
                 
                 <div class="relative flex-1 w-full">
