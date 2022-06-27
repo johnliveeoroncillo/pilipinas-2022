@@ -1,6 +1,6 @@
 <template>
     <h1 v-if="show">
-        Sample Modal 
+        Sample Delete Modal 
 
         <button @click="close">Close</button>
     </h1>
@@ -14,7 +14,7 @@ export default {
         }
     },
     created() {
-        this.$root.$on('show_modal_confirm', () => {
+        this.$root.$on('show_modal_delete', () => {
             this.showModal();
         })
     },

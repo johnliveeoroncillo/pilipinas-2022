@@ -5,9 +5,13 @@
 
         <input type="text" v-model="form.username" />
 
-        <ul>
+        <!-- <ul>
             <li v-for="(user, i) in users" :key="i">{{user.login}}</li>
-        </ul>
+        </ul> -->
+
+        <div class="grid text-sm lg:text-xl grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-12">
+            <div class="flex-1" v-for="d in 12" :key="d">{{d}}</div>
+        </div>
     </main>
 </template>
 
