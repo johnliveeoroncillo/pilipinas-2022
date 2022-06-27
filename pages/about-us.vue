@@ -1,10 +1,13 @@
 <template>
     <main>
         <h1>About Us</h1>
-        <input type="text" v-model="form.username" />
-        Value: {{form.username}}
+        {{first_name}}
 
-        <button @click="save">Save</button>
+        <input type="text" v-model="form.username" />
+
+        <ul>
+            <li v-for="(user, i) in users" :key="i">{{user.login}}</li>
+        </ul>
     </main>
 </template>
 
@@ -15,13 +18,57 @@ export default {
             form: {
                 username: '',
                 password: '',
-            }
+            },
         }
     },
-    methods: {
-        async save() {
-            await this.$axios.post('/login', this.form)
+    computed: {
+        first_name() {
+            return this.$store.state.first_name;
+        },
+        users() {
+            return this.$store.state.users;
         }
-    }
+    },
+    async created() {
+        ///MUTATION
+        //correct
+        this.$store.commit('UPDATE_FIRSTNAME', 'JL')
+        // //wrong
+        // this.$store.state.first_name = 'Jl1';
+
+
+        ///ACTIONS
+        await this.$store.dispatch('LOAD_USERS');
+    },
+    // methods: {
+    //     async save() {
+    //         await this.$axios.post('/login', this.form)
+    //     }
+    // },
+    // watch: {
+    //     "form.username"(newVal, old) {
+    //         console.log(newVal, old);
+    //     }
+    // }
+
+    // /**
+    //  * LIFECYCLE
+    //  */
+    // created() {
+    //     //CALL API
+    // },
+    // mounted() {
+    //     //CALL API
+    //     //BEST WAY TO RENDER UI
+    // },
+    // unmounted() {
+        
+    // },
+    // beforeDestroy() {
+
+    // },
+    // destroyed() {
+
+    // }
 }
 </script>
